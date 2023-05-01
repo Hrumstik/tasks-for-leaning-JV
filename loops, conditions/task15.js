@@ -1,9 +1,10 @@
-// Выведите в консоль count элементов арифметической прогрессии с началом в start и шагом step.
+// Выведите в консоль count элементов арифметической прогрессии с началом в currentNumber  и шагом step.
 
-let start = +prompt("Введите стартовое число", 1);
+let currentNumber = +prompt("Введите стартовое число", 1);
 let step = +prompt("Введите число-шаг", 2);
+let count = +prompt("Введите count")
 
-for (let count = start; start <= 1000; start++) {
-    count = count + step;
-    console.log(count);
+for (let i = 1; i <= count; i++) {
+    currentNumber = currentNumber + step;
+    console.log(currentNumber);
 }

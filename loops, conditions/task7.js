@@ -6,6 +6,9 @@
 
 let n = +prompt("Введите целое число от 0 до 9", 0);
 switch (n) {
+    case 0:
+        alert('Ноль');
+        break;
     case 1:
         alert('Один');
         break;

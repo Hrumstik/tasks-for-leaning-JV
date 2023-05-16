@@ -1,17 +1,22 @@
 // Напишите функцию operation(m,n,o)
 // , в которой m и n — числовые переменные, а o —  это название операции, которую над этими числами нужно произвести (”add”, “substract”, “multiply”, “divide”). Функция должна возвращать результат операции над этими переменными
 function operation(m, n, o) {
-    if (o == "add") {
-        return m + n;
+    switch (o) {
+        case "add":
+            return m + n;
+            break;
 
-    } else if (o == "substract") {
-        return m - n;
+        case "substract":
+            return m - n;
+            break;
 
-    } else if (o == "multiply") {
-        return m * n;
+        case "multiply":
+            return m * n;
+            break;
 
-    } else if (o == "divide") {
-        return m / n;
+        case "divide":
+            return m / n;
+            break;
     }
 }
 

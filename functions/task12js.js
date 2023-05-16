@@ -4,17 +4,22 @@
 //     3. при k = 2: yyyy/mm/dd
 
 function printDate(day, month, year, k) {
-    if (k == 0) {
-        console.log(`${day}.${month}.${year.slice(2)}`)
-
-    } else if (k == 1) {
-        console.log(`${day}.${month}.${year}`)
-
-    } else if (k == 2) {
-        console.log(`${year}/${month}/${day}`)
+    if (day < 10) { day = "0" + day };
+    if (month < 10) { month = "0" + month };
+    if (year < 100) { year = year + 1900 }
+    switch (k) {
+        case 0:
+            year = year.toString();
+            console.log(`${day}.${month}.${year.slice(2)}`);
+            break;
+        case 1:
+            console.log(`${day}.${month}.${year}`);
+            break;
+        case 2:
+            console.log(`${year}/${month}/${day}`)
+            break;
     }
+
 }
 
-printDate("08", "09", "1998", 2);
-
-// Есть у меня чуйка, что буду переделывать задание :D
+printDate(8, 9, 97, 0);

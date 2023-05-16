@@ -13,6 +13,5 @@ let people = {
     Vlad: 15,
 }
 for (key in people) {
-    console.log(`Имя: ${key}`);
-    console.log(`Возраст: ${people[key]}`);
+    console.log(`Имя: ${key}. Возраст: ${people[key]}`);
 }

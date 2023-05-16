@@ -1,19 +1,17 @@
 // Добавить объекту из предыдущей задачи методы getEntrance и getFloor, которые в качестве аргумента будут принимать номер квартиры и будут возвращать  номер подъезда и этажа соответственно, в
 // котором находится указанная квартира. 
 let apartmentBuilding = {
-    "numberOfStoreys": 25,
+    "numberOfFloors": 25,
     "numberOfEntrances": 10,
     "numberOfApartmentsOnTheLanding": 20,
-    getEntrance() {
-        let store = prompt("Введите номер квартиры");
-        let Entrances = Math.ceil(10 * store / 500);
-        alert(`Ваша квартира находится в ${Entrances} подъезде`)
+    getEntrance(apartment) {
+        let entrances = Math.ceil(apartment / (apartmentBuilding.numberOfFloors * apartmentBuilding.numberOfApartmentsOnTheLanding));
+        return `Ваша квартира находится в ${entrances} подъезде`
     },
-    getFloor() {
-        let store = prompt("Введите номер квартиры");
-        let Floor = Math.ceil(25 * store / 500);
-        alert(`Ваша квартира находится на ${Floor} этаже`)
-    }
+    getFloor(apartment) {
+        let floor = Math.ceil(apartment * apartmentBuilding.numberOfApartmentsOnTheLanding / (apartmentBuilding.numberOfApartmentsOnTheLanding * apartmentBuilding.numberOfFloors));
+        return `Ваша квартира находится на ${floor} этаже`
+    },
 }
-apartmentBuilding.getEntrance();
-apartmentBuilding.getFloor();
+console.log(apartmentBuilding.getEntrance(501));
+console.log(apartmentBuilding.getFloor(126));
